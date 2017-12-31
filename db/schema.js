@@ -5,6 +5,51 @@ mongoose.connect('mongodb://localhost/giftReturn')
 mongoose.Promise = global.Promise
 
 
+const GiftSchema = new Schema(
+    {
+        name:{
+            type: String,
+            required: [true, 'Need a name!']
+        },
+        description: {
+            type: String,
+        },
+        price: {
+            type: Number,
+        },
+        giftGiver: {
+            type: String,
+        },
+    
+    timestamps:{}
+    }
+)
+
+
+
+
+
+
+const StoreSchema = new Schema(
+    {
+        name: {
+            type: String,
+            required: [true, 'Store needs a name']
+        },
+        address: {
+            type: String,
+            required: [true, 'Where we goona pick up the stuff?']
+        },
+        giftsToReturn: [GiftSchema]
+    },
+    {
+        timestamps: {}
+    }
+)
+
+
+
+
 const UserSchema = new Schema(
     {
         username: {
@@ -33,19 +78,9 @@ const UserSchema = new Schema(
     }
 )
 
-const StoreSchema = new Schema(
-    {
-        name: {
-            type: String,
-            required: [true, 'Store needs a name']
-        },
-        address: {
-            type: String,
-            required: [true, 'Where we goona pick up the stuff?']
-        },
-        giftsToReturn: [GiftSchema]
-    },
-    {
-        timestamps: {}
-    }
-)
+module.exports = {
+    UserSchema,
+    StoreSchema,
+    GiftSchema
+}
+
