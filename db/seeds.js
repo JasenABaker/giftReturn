@@ -1,7 +1,5 @@
 const mongoose = require('mongoose')
-mongoose.connect('mongodb://localhost/giftReturn', {
-    useMongoClient: true
-})
+mongoose.connect('mongodb://localhost/giftReturn')
 
 const User = require('../models/user')
 const Store = require('../models/store')

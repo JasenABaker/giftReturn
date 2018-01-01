@@ -1,9 +1,12 @@
 const mongoose = require('mongoose')
 mongoose.connect('mongodb://localhost/giftReturn')
 mongoose.Promise = global.Promise
+const Schema = mongoose.Schema
 
 
-const GiftSchema = new Schema(
+
+
+const GiftSchema = new Schema (
     {
         name:{
             type: String,
@@ -28,7 +31,7 @@ const GiftSchema = new Schema(
 
 
 
-const StoreSchema = new Schema(
+const StoreSchema = new Schema ( 
     {
         name: {
             type: String,
@@ -48,7 +51,7 @@ const StoreSchema = new Schema(
 
 
 
-const UserSchema = new Schema(
+const UserSchema = new Schema (
     {
         username: {
             type: String,
