@@ -8,6 +8,28 @@ const Store = require('../models/store')
 const Gift = require('../models/Gift')
 
 
+const swordPolish = new Gift ({
+    name: 'Sword Polish',
+    description: 'Good for polishing swords, knives and daggers.',
+    price: 20,
+    giftGiver: 'Arya Stark'
+})
+
+const chalice= new Gift ({
+    name: 'Gold Chalice',
+    description: 'Gold encrusted Chalice. Good for wine or ale.',
+    price: 340,
+    giftGiver: 'Ser Bronn of the Blackwater'
+})
+
+const kibble = new Gift ({
+    name: "People 'N' Bits Dragon Kibble",
+    description: 'Chock full of the things dragons love.',
+    price: 500,
+    giftGiver: 'Khal Drogo'
+})
+
+
 const petCo = new Store ({
     name: 'Pet Co.',
     address: '4567 Dragon Way',
@@ -17,12 +39,13 @@ const petCo = new Store ({
 const swordsRUs = new Store ({
     name: "Swords 'R' Us ",
     address: 'Near the wall',
-    giftsToReturn: []
+    giftsToReturn: [swordPolish]
 })
 
 const WineAndAle = new Store ({
     name: 'Wine and Ale Emporium',
     address: '1453 Redwine Road, The Arbor',
+    giftsToReturn: [chalice]
 })
 
 
@@ -50,6 +73,6 @@ const daenerysTargaryen = new User ({
     firstName: 'Daenerys',
     lastName: 'Targaryen',
     photoUrl: 'http://www.telegraph.co.uk/content/dam/tv/2017/07/27/Daenerys-Targaryen-xlarge_trans_NvBQzQNjv4BqtGQB12KHxxQCrwnTZkX0n0vfX_p6SFMi1h6moBw3wqs.jpg',
-    stores: []
+    stores: [petCo]
 })
 
