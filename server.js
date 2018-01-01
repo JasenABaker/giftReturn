@@ -6,8 +6,11 @@ const app = express()
 
 
 
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended:true}))
 
-
+const userController = require('./controllers/userController')
+app.use('/users', userController)
 
 
 
