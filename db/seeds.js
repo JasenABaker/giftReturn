@@ -76,3 +76,30 @@ const daenerysTargaryen = new User ({
     stores: [petCo]
 })
 
+
+Gift.remove()
+    .then(()=>{
+        return Store.remove()
+    })
+    .then(()=>{
+        return User.remove()
+    })
+    .then(()=>{
+        return jonSnow.save()
+    })
+    .then((user)=>{
+        console.log('Jon Snow was saved')
+        return tyrionLannister.save()
+    })
+    .then((user)=>{
+        console.log('Tyrion Lannister was saved')
+        return daenerysTargaryen.save()
+    })
+    .then((user)=>{
+        console.log('Daenerys Targaryen was saved')
+        console.log('All users saved')
+        mongoose.connection.close
+    })
+    .catch((err)=>{
+        console.log(err)
+    })
