@@ -68,7 +68,7 @@ header {
 a {
     text-decoration: none;
 }
-.button a{
+.button a, .store_visit a, .edit_btn a, .delete_btn a{
     color: #ffffff;
 }
 
@@ -77,7 +77,7 @@ a {
     color: white;
 }
 
-.form {
+.user_card {
     align-self: center;
     height: 50%;
     width: 50%;
@@ -91,7 +91,7 @@ a {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
-.form h3{
+.user_card h3{
     font-size: 26px;
     color: #FFFFFF
 }
@@ -119,3 +119,59 @@ form {
 
 }
 
+.single_user{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.single_user img{
+    align-self: flex-start;
+    height: 250px;
+    width: 250px;
+    border-radius: 49%;
+}
+.info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color: #ffffff;
+    font-size: 18px;
+}
+strong{
+    font-size: 24px;
+    color: #95A3B3;
+}
+.buttons{
+    display: flex;
+    justify-content: space-between;
+
+}
+.store_visit{
+    background: #84DCC6;
+    border: 3px solid #4B4E6D;
+    font-size: 18px;
+    border: 3px solid #ffffff;
+    border-radius: 5px;
+    width: 25%;
+}
+
+.edit_btn{
+    background: #95A3B3;
+    border: 3px solid #4B4E6D;
+    font-size: 18px;
+    border: 3px solid #84DCC6;
+    border-radius: 5px;
+    width: 25%;
+}
+
+.delete_btn {
+    background: #95A3B3;
+    border: 3px solid #4B4E6D;
+    font-size: 18px;
+    border: 3px solid #84DCC6;
+    border-radius: 5px;
+    width: 25%;
+}

@@ -1,0 +1,29 @@
+<div class="menu">
+    <a href="/users"> Home </a>
+</div>
+
+<div class="user_card">
+    <h3>{{user.firstName}} {{user.lastName}}</h3>
+    <div class="single_user">
+        <img src="{{user.photoUrl}}" alt="{{user.username}}">
+        <div class="info">
+            <div>username:
+                <strong>{{user.username}}</strong>
+            </div>
+            <div>Email Address:
+                <strong>{{user.email}}</strong>
+            </div>
+            <div class="buttons">
+            <button class="store_visit">
+                <a href="/users/{{user._id}}/stores">Stores to Visit</a>
+            </button>
+            <button class="edit_btn">
+                <a href="/users/{{user._id}}/edit">Edit User</a>
+            </button>
+            <button class="delete_btn">
+                <a href="/users/{{user._id}}/delete">Delete User</a>
+        </button>
+            </div>
+        </div>
+    </div>
+</div>
