@@ -1,10 +1,19 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
+const methodOverRide = require('method-override')
+
+
+
+
 const app = express()
 
 
+
+
+
 app.set('view engine','hbs')
+app.use(methodOverRide('_method'))
 
 
 
