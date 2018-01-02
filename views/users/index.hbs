@@ -3,6 +3,7 @@
 </div>
 <div class='profile_container'>
     {{#each users}}
+    <a href="/users/{{this._id}}" class="link ">
     <div class="profile">
         <div class="user_image">
             <img src="{{this.photoUrl}}" alt"{{this.username}}'s picture">
@@ -10,7 +11,11 @@
         <div class="user_name">
             {{this.firstName}} {{this.lastName}}
         </div>
-        
     </div>
+    </a>
 {{/each}}
 </div>
+    <div class="button">
+        <a href="/users/new">New User
+        </a>
+    </div>

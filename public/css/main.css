@@ -15,6 +15,9 @@ header {
 }
 .main {
     grid-area: 2/ 1/ 11 / 11;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
 }
 
@@ -27,8 +30,8 @@ header {
 }
 
 .profile {
-    height: 25%;
-    width: 10%;
+    height: 300px;
+    width: 250px;
     background-color: #4B4E6D;
     display: flex;
     flex-direction: column;
@@ -39,9 +42,32 @@ header {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
+.user_name{
+    color: #ffffff;
+    font-size: 24px;
+}
+
 .user_image img {
-    height: 150px;
-    width: 150px;
+    height: 200px;
+    width: 200px;
     border-radius: 49%;
 }
 
+.button {
+    font-size: 36px; 
+    background: #84DCC6;
+    border: 3px solid #4B4E6D;
+    height: 40px;
+    width: 200px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-self: center;
+}
+
+a {
+    text-decoration: none;
+}
+.button a{
+    color: #ffffff;
+}
