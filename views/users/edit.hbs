@@ -1,0 +1,28 @@
+<div class="menu">
+    <a href="/users"> Home_</a>
+    <a href="/users/{{user._id}}">Back to User</a>
+</div>
+
+<div class="user_card">
+    <h3>{{user.firstName}} {{user.lastName}}</h3>
+    <form method="POST" action="/users">
+        <div class="form_input">
+            <input type="text" name="username" value="{{user.username}}">
+        </div>
+        <div class="form_input">
+            <input type="text" name="email" value="{{user.email}}">
+        </div>
+        <div class="form_input">
+            <input type="text" name="firstName" value="{{user.firstName}}">
+        </div>
+        <div class="form_input">
+            <input type="text" name="lastName" value="{{user.lastName}}">
+        </div>
+        <div class="form_input">
+            <input type="text" name="photoUrl" value="{{user.photoUrl}}">
+        </div>
+        <div class="input_btn">
+            <input id="submit" type="submit" name="update User">
+        </div>
+    </form>
+</div>

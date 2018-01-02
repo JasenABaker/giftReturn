@@ -42,6 +42,29 @@ router.get('/:userid', (req, res) =>{
     })
 })
 
+router.get('/:userid/edit', (req, res) =>{
+    const userId = req.params.userid
+    User.findById(userId)
+    .then((user)=> {
+        res.render('users/edit', {
+            user,
+            pageTitle: 'Profile_update'
+        })
+    })
+    .catch((err) =>{
+        console.log(err)
+    })
+})
+
+router.put('/:userid', (req, res) =>{
+    const updateUser = req.body
+    const userId = req.params.userid
+    User.findByIdAndUpdate(userId, updateUser, { new: true })
+    .then((updatedUser) => {
+        res.redirect(`/users/${userId}`)
+    })
+})
+
 router.post('/', (req, res) =>{
     const newUser = req.body
     if(!newUser.photoUrl){
