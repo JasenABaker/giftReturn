@@ -1,3 +1,27 @@
 <div class="menu">
-   <a href="/users"> Home </a>
+    <a href="/users"> Home </a>
+</div>
+
+<div class="form">
+    <h3>New User</h3>
+    <form method="POST" action="/users">
+        <div class="form_input">
+            <input type="text" name="username" value="User Name">
+        </div>
+        <div class="form_input">
+            <input type="text" name="email" value="Email Address">
+        </div>
+        <div class="form_input">
+            <input type="text" name="firstName" value="First Name">
+        </div>
+        <div class="form_input">
+            <input type="text" name="lastName" value="Last Name">
+        </div>
+        <div class="form_input">
+            <input type="text" name="photoUrl" value="User Image">
+        </div>
+        <div class="input_btn">
+            <input id="submit" type="submit" name="Create New User">
+        </div>
+    </form>
 </div>
