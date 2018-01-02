@@ -4,6 +4,8 @@ const mongoose = require('mongoose')
 const app = express()
 
 
+app.set('view engine','hbs')
+
 
 
 app.use(bodyParser.json())

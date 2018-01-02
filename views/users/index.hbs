@@ -1,0 +1,13 @@
+<div class='profile_container'>
+    <div class="profile">
+        {{#each users}}
+        <div class="user_image">
+            <img src="{{this.photoUrl}}" alt"{{this.username}}'s picture">
+        </div>
+        <div class="user_name">
+            {{this.firstName}} {{this.lastName}}
+        </div>
+        {{/each}}
+    </div>
+
+</div>
