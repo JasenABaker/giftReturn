@@ -96,6 +96,33 @@ Gift.remove()
     .then((user)=>{
         console.log('Daenerys Targaryen was saved')
         console.log('All users saved')
+        return petCo.save()
+    })
+    .then((stores) =>{
+        console.log("PetCo saved")
+        return swordsRUs.save()
+    })
+    .then((stores) =>{
+        console.log("Swords R Us Saved")
+        return WineAndAle.save()
+    })
+    .then((stores) =>{
+        console.log('Wine and Ale saved')
+        console.log('All stores Saved')
+        return swordPolish.save()
+    })
+    .then((gifts)=>{
+        console.log('Sword Polish Saved')
+        return chalice.save()
+    })
+    .then((gifts)=>{
+        console.log('Chalice Saved')
+        return kibble.save()
+    })
+    .then((gifts) =>{
+        console.log('Kibble is saved')
+        console.log('All gifts saved')
+        console.log('Everything saved')
         mongoose.connection.close
     })
     .catch((err)=>{

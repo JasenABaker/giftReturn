@@ -5,7 +5,7 @@
 
 <div class="user_card">
     <h3>{{user.firstName}} {{user.lastName}}</h3>
-    <form method="POST" action="/users">
+    <form method="POST" action="/users/{{user._id}}?_method=PUT">
         <div class="form_input">
             <input type="text" name="username" value="{{user.username}}">
         </div>

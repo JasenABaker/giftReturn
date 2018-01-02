@@ -23,6 +23,9 @@ app.use(bodyParser.urlencoded({extended:true}))
 const userController = require('./controllers/userController')
 app.use('/users', userController)
 
+const storeController = require('./controllers/storeController')
+app.use('/stores', storeController)
+
 app.use(express.static('public'))
 
 

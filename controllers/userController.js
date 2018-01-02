@@ -56,12 +56,26 @@ router.get('/:userid/edit', (req, res) =>{
     })
 })
 
+router.get('/:userid/delete', (req,res) => {
+    const userId = req.params.userid
+    User.findByIdAndRemove(userId)
+    .then (() =>{
+        res.redirect('/users')
+    })
+    .catch((err) => {
+        console.log(err)
+    })
+})
+
 router.put('/:userid', (req, res) =>{
     const updateUser = req.body
     const userId = req.params.userid
     User.findByIdAndUpdate(userId, updateUser, { new: true })
-    .then((updatedUser) => {
+    .then(() => {
         res.redirect(`/users/${userId}`)
+    })
+    .catch((err) =>{
+        console.log(err)
     })
 })
 
