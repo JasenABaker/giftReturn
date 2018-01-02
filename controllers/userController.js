@@ -27,5 +27,19 @@ router.get('/new', (req, res) =>{
     res.render('users/new', { pageTitle: 'New User'})
 })
 
+router.post('/', (req, res) =>{
+    const newUser = req.body
+    if(!newUser.photoUrl){
+        newUser.photoUrl = 'https://images.esellerpro.com/2243/I/362/96/DECOR712-drogon-dragon-egg-game-of-thrones%20(1).JPG'
+    }
+    User.create(newUser)
+    .then(()=>{
+        res.redirect('/users')
+    })
+    .catch((err)=>{
+        console.log(err)
+    })
+})
+
 
 module.exports = router
