@@ -1,0 +1,22 @@
+<div class="menu">
+    <a href="/users"> Home </a>
+</div>
+<div class='profile_container'>
+    {{#each stores}}
+    <a href="/users/{{userId}}/stores/{{this._id}}" class="link ">
+    <div class="stores">
+        <div class="store_name">
+            {{this.name}} 
+        </div>
+        <div class="address">
+            <h4>Address:</h4>
+            {{this.address}}
+        </div>
+    </div>
+    </a>
+{{/each}}
+</div>
+    <div class="button">
+        <a href="/stores/new">New Store
+        </a>
+    </div>

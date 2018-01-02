@@ -6,21 +6,21 @@ const Store = require('../models/store')
 const Gift = require('../models/Gift')
 
 
-const swordPolish = new Gift ({
+const swordPolish = new Gift({
     name: 'Sword Polish',
     description: 'Good for polishing swords, knives and daggers.',
     price: 20,
     giftGiver: 'Arya Stark'
 })
 
-const chalice= new Gift ({
+const chalice = new Gift({
     name: 'Gold Chalice',
     description: 'Gold encrusted Chalice. Good for wine or ale.',
     price: 340,
     giftGiver: 'Ser Bronn of the Blackwater'
 })
 
-const kibble = new Gift ({
+const kibble = new Gift({
     name: "People 'N' Bits Dragon Kibble",
     description: 'Chock full of the things dragons love.',
     price: 500,
@@ -28,26 +28,26 @@ const kibble = new Gift ({
 })
 
 
-const petCo = new Store ({
+const petCo = new Store({
     name: 'Pet Co.',
     address: '4567 Dragon Way',
     giftsToReturn: []
 })
 
-const swordsRUs = new Store ({
+const swordsRUs = new Store({
     name: "Swords 'R' Us ",
     address: 'Near the wall',
     giftsToReturn: [swordPolish]
 })
 
-const WineAndAle = new Store ({
+const WineAndAle = new Store({
     name: 'Wine and Ale Emporium',
     address: '1453 Redwine Road, The Arbor',
     giftsToReturn: [chalice]
 })
 
 
-const jonSnow = new User ({
+const jonSnow = new User({
     username: 'IknowSomethings',
     email: 'Othertargaryn@gmail.com',
     firstName: 'Jon',
@@ -56,7 +56,7 @@ const jonSnow = new User ({
     stores: [swordsRUs]
 })
 
-const tyrionLannister = new User ({
+const tyrionLannister = new User({
     username: 'Shorthand',
     email: 'Drunkendwarf@hotmail.com',
     firstName: 'Tyrion',
@@ -65,7 +65,7 @@ const tyrionLannister = new User ({
     stores: [WineAndAle]
 })
 
-const daenerysTargaryen = new User ({
+const daenerysTargaryen = new User({
     username: 'DragonSoccerMom',
     email: 'MotherofDragons@hgmail.com',
     firstName: 'Daenerys',
@@ -76,55 +76,63 @@ const daenerysTargaryen = new User ({
 
 
 Gift.remove()
-    .then(()=>{
+    .then(() => {
         return Store.remove()
     })
-    .then(()=>{
+    .then(() => {
         return User.remove()
     })
-    .then(()=>{
+    .then(() => {
         return jonSnow.save()
     })
-    .then((user)=>{
+    .then((user) => {
         console.log('Jon Snow was saved')
         return tyrionLannister.save()
     })
-    .then((user)=>{
+    .then((user) => {
         console.log('Tyrion Lannister was saved')
         return daenerysTargaryen.save()
     })
-    .then((user)=>{
+    .then((user) => {
         console.log('Daenerys Targaryen was saved')
         console.log('All users saved')
         return petCo.save()
     })
-    .then((stores) =>{
+    .then((stores) => {
         console.log("PetCo saved")
         return swordsRUs.save()
     })
-    .then((stores) =>{
+    .then((stores) => {
         console.log("Swords R Us Saved")
         return WineAndAle.save()
     })
-    .then((stores) =>{
+    .then((stores) => {
         console.log('Wine and Ale saved')
         console.log('All stores Saved')
         return swordPolish.save()
     })
-    .then((gifts)=>{
+    .then((gifts) => {
         console.log('Sword Polish Saved')
         return chalice.save()
     })
-    .then((gifts)=>{
+    .then((gifts) => {
         console.log('Chalice Saved')
         return kibble.save()
     })
-    .then((gifts) =>{
+    .then((gifts) => {
         console.log('Kibble is saved')
         console.log('All gifts saved')
         console.log('Everything saved')
-        mongoose.connection.close
+
     })
-    .catch((err)=>{
+    .catch((err) => {
         console.log(err)
+    })
+    .then(() => {
+        mongoose.connection.close()
+        console.long(`
+        Finisheed seeding database...
+
+        Disconnected from MongoDB
+        `)
     })
