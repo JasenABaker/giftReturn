@@ -27,6 +27,21 @@ router.get('/new', (req, res) =>{
     res.render('users/new', { pageTitle: 'New User'})
 })
 
+
+router.get('/:userid', (req, res) =>{
+    const userId = req.params.userid
+    User.findById(userId)
+    .then((user)=>{
+        res.render('users/show', {
+            user,
+            pageTitle: user.username
+        })
+    })
+    .catch((err)=>{
+        console.log(err)
+    })
+})
+
 router.post('/', (req, res) =>{
     const newUser = req.body
     if(!newUser.photoUrl){
