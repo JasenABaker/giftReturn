@@ -14,6 +14,8 @@ app.use(bodyParser.urlencoded({extended:true}))
 const userController = require('./controllers/userController')
 app.use('/users', userController)
 
+app.use(express.static('public'))
+
 
 
 mongoose.connect('mongodb://localhost/giftReturn')
