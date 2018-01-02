@@ -71,3 +71,8 @@ a {
 .button a{
     color: #ffffff;
 }
+
+.menu a {
+    font-size: 26px;
+    color: white;
+}

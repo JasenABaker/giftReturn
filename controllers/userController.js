@@ -23,5 +23,9 @@ router.get('/', (req, res) => {
 
 })
 
+router.get('/new', (req, res) =>{
+    res.render('users/new', { pageTitle: 'New User'})
+})
+
 
 module.exports = router
